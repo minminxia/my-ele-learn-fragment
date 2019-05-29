@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="nav-menu-container">
+      <nav-menu></nav-menu>
+    </div>
+    <div class="main-container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import NavMenu from '@/components/common/NavMenu'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    NavMenu
+  }
 }
 </script>
 
@@ -18,6 +26,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.nav-menu-container{
+  width: 25%;
+  float: left;
+  border: 1px solid #ccc;
+  height: 1000px;
+}
+.main-container{
+  /* width: 60%; */
+  width: calc(75% - 4px );
+  float: left;
+  border: 1px solid #ccc;
 }
 </style>
